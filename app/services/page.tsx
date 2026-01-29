@@ -22,10 +22,12 @@ const services = [
       'Institutional Projects'
     ],
     images: [
-      '/images/services/steel-frame-blue-render.png',
-      '/images/services/bim-structural-model.png',
-      '/images/steel-building-construction.jpg',
-      '/images/gallery/steel-building-modern.jpg'
+      '/images/miscellaneous/2.png',
+      '/images/miscellaneous/4.png',
+      '/images/miscellaneous/5.png',
+      '/images/miscellaneous/6.png',
+      '/images/miscellaneous/7.png',
+     
     ]
   },
   {
@@ -40,10 +42,11 @@ const services = [
       'Quality Control Plans'
     ],
     images: [
-      '/images/services/structural-frame-colored.png',
-      '/images/bim-model-2.png',
-      '/images/gallery/steel-frame-blue.jpg',
-      '/images/fabrication.jpg'
+      '/images/fabrication/1.png',
+      '/images/fabrication/2.png',
+      '/images/fabrication/3.png',
+      '/images/fabrication/4.png',
+      
     ]
   },
   {
@@ -77,7 +80,7 @@ const services = [
     ],
     images: [
       '/images/bim-model-1.png',
-      '/images/services/bim-structural-model.png',
+      // '/images/services/bim-structural-model.png',
       '/images/steel-stairs.jpg',
       '/images/shop-drawings.jpg'
     ]
@@ -94,10 +97,12 @@ const services = [
       'Anchor Bolt Plans'
     ],
     images: [
-      '/images/steel-frame-3d.jpg',
-      '/images/services/steel-frame-blue-render.png',
-      '/images/gallery/steel-structure-golden.jpg',
-      '/images/gallery/steel-frame-render.jpg'
+      '/images/Pemb/1.png',
+      '/images/Pemb/2.png',
+      '/images/Pemb/3.png',
+      '/images/Pemb/4.png',
+      '/images/Pemb/5.png',
+      
     ]
   },
   {
@@ -112,10 +117,10 @@ const services = [
       '3D Visualization'
     ],
     images: [
-      '/images/services/bim-structural-model.png',
-      '/images/bim-model-4.png',
-      '/images/bim-modeling.jpg',
-      '/images/gallery/construction-workflow.jpg'
+      // '/images/gallery/4.png',
+      '/images/gallery/5.png',
+      '/images/gallery/6.png',
+      // '/images/gallery/construction-workflow.jpg'
     ]
   },
   {
@@ -130,10 +135,10 @@ const services = [
       'Quantity Extraction'
     ],
     images: [
-      '/images/services/steel-stairs-detail.png',
-      '/images/bim-model-3.png',
-      '/images/services/structural-frame-colored.png',
-      '/images/gallery/steel-mezzanine-interior.jpg'
+      '/images/3.png',
+      '/images/4.png',
+      // '/images/services/structural-frame-colored.png',
+      // '/images/gallery/steel-mezzanine-interior.jpg'
     ]
   },
 ]

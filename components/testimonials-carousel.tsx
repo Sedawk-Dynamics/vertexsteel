@@ -12,21 +12,21 @@ const testimonials = [
     author: "Michael Anderson",
     position: "Project Manager",
     company: "BuildTech Construction",
-    image: '/images/gallery/steel-building-modern.jpg',
+    image: '/images/gallery/1.png',
   },
   {
     quote: "Working with Vertex has been a game-changer for our projects. Their BIM coordination and clash detection services saved us significant time and costs during construction.",
     author: "Sarah Johnson",
     position: "Chief Engineer",
     company: "Metropolitan Structures",
-    image: '/images/gallery/steel-frame-blue.jpg',
+    image: '/images/gallery/2.png',
   },
   {
     quote: "The team's expertise in structural steel detailing is unmatched. They consistently deliver fabrication-ready drawings that meet all industry standards and exceed our expectations.",
     author: "David Chen",
     position: "Director of Engineering",
     company: "Apex Steel Solutions",
-    image: '/images/gallery/steel-structure-golden.jpg',
+    image: '/images/gallery/3.png',
   },
 ]
 

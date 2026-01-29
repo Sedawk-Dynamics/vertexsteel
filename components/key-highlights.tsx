@@ -18,7 +18,7 @@ const highlights = [
   },
   {
     title: "Connection Design & Delegated Design",
-    image: "/images/gallery/steel-mezzanine-interior.jpg",
+    image: "/images/7.png",
     points: [
       "We provide steel connection and delegated design services to support safe, efficient, and code-compliant structural solutions.",
       "Our scope includes the design and detailing of bolted and welded connections in coordination with project requirements and governing standards.",
@@ -44,7 +44,7 @@ const highlights = [
   },
   {
     title: "Pre-Engineered Building",
-    image: "/images/gallery/steel-frame-blue.jpg",
+    image: "/images/1.png",
     points: [
       "We provide pre-engineered steel building detailing services that support efficient, cost-effective, and high-quality construction solutions.",
       "Our scope includes accurate detailing for primary and secondary framing systems, connections, and components, sheeting in compliance with project specifications and applicable codes.",
@@ -53,7 +53,7 @@ const highlights = [
   },
   {
     title: "Project Management",
-    image: "/images/gallery/steel-frame-render.jpg",
+    image: "/images/2.jpg",
     points: [
       "We offer dedicated project management services for steel detailing to ensure timely delivery, quality control, and effective coordination throughout the project lifecycle.",
       "Our team manages schedules, communication, and revisions while closely coordinating with clients, engineers, and fabricators.",

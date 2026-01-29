@@ -59,6 +59,24 @@ export function Showcase() {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
 
+         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+            Our Expertise
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+            From Design to Delivery
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+            We leverage advanced technology and proven methodologies to deliver exceptional steel detailing services across all project phases.
+          </p>
+        </motion.div>
+
         {/* GRID ONLY — NO HEADINGS */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {showcaseItems.map((item, index) => (
