@@ -8,13 +8,13 @@ const showcaseItems = [
     title: "Structural Steel Shop Drawings",
     description:
       "Preparation of detailed shop drawings for beams, columns, bracings, trusses, and frames in accordance with project specifications and approved design documents.",
-    image: "/images/steel-building-construction.jpg",
+    image: "https://astcad.com.au/wp-content/uploads/2025/04/ChatGPT-Image-Apr-30-2025-10_05_09-AM.webp",
   },
   {
     title: "Erection Drawings & Assembly Sequencing",
     description:
       "Development of clear erection drawings with member identification, connection references, and sequencing to support efficient site installation.",
-    image: "/images/steel-frame-3d.jpg",
+    image: "https://omsteelsolutions.com/wp-content/uploads/2025/07/Erection-drawing-1-1115x1536.png",
   },
   {
     title: "Connection Design & Engineering Calculations",
@@ -50,7 +50,7 @@ const showcaseItems = [
     title: "Pre-Engineered / Metal Building (PEB / PEMB) Detailing",
     description:
       "Accurate detailing of primary frames, secondary members, bracing systems, and connections in coordination with manufacturer design and erection requirements.",
-    image: "/images/steel-structure-sunset.jpg",
+    image: "https://civildigital.com/wp-content/uploads/2017/05/Components-of-PEB.jpg",
   },
 ]
 

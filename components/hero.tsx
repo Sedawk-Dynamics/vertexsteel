@@ -38,7 +38,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="max-w-xl"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight mt-[39]">
               Building Excellence Through{" "}
               <span className="text-primary">Precision</span> Detailing
             </h1>
@@ -68,7 +68,7 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* STATS */}
+            {/* STATS
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50">
               <div>
                 <div className="text-3xl font-bold text-primary">100+</div>
@@ -82,7 +82,7 @@ export function Hero() {
                 <div className="text-3xl font-bold text-primary">24/7</div>
                 <div className="text-sm text-muted-foreground mt-1">Support Available</div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* RIGHT — IMAGE SLIDESHOW (50%) */}
@@ -90,7 +90,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[520px] rounded-3xl overflow-hidden shadow-2xl"
+            className="relative h-[520px] rounded-3xl overflow-hidden shadow-2xl mt-[-130]"
           >
             {/* Image slideshow */}
             <AnimatePresence mode="wait">

@@ -22,29 +22,31 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm "
     >
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-32">
           
-          {/* LOGO */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="flex items-center gap-2 overflow-visible"
-          >
-            <Link href="/" className="block overflow-visible">
-              <Image
-                src="/images/vertex-logo.png"
-                alt="Vertex Steel and Engineering Services"
-                width={960}
-                height={320}
-                className="h-28 w-auto scale-200 origin-left cursor-pointer hover:opacity-90 transition-all"
-                priority
-              />
-            </Link>
-          </motion.div>
+      {/* LOGO */}
+       <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="flex items-center overflow-visible"
+      >
+        <Link href="/" className="block overflow-visible">
+          <Image
+            src="/images/vertex-logo.png"
+            alt="Vertex Steel and Engineering Services"
+            width={960}
+            height={320}
+            className="h-28 w-auto scale-200 origin-left cursor-pointer hover:opacity-90 transition-all 
+                      mt-[15px] mb-0"
+            priority
+          />
+        </Link>
+      </motion.div>
+
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-6">

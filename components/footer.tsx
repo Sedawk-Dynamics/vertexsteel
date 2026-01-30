@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { Mail, MapPin, Linkedin, Facebook, Twitter } from "lucide-react"
 
 const containerVariants = {
@@ -85,14 +86,19 @@ export function Footer() {
               Quick Links
             </h4>
             <ul className="space-y-3">
-              {["Home", "Services", "About Us", "Contact"].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
+              {[
+                { label: "Home", href: "/" },
+                { label: "Services", href: "/services" },
+                { label: "About Us", href: "/about" },
+                { label: "Contact", href: "/contact" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
                     className="text-sm text-slate-600 hover:text-primary transition-colors"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -160,18 +166,18 @@ export function Footer() {
           </div>
 
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              href="/privacy-policy"
               className="text-sm text-slate-500 hover:text-primary transition-colors"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/terms-of-service"
               className="text-sm text-slate-500 hover:text-primary transition-colors"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

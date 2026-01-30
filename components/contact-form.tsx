@@ -1,7 +1,6 @@
 "use client"
 
-import React from "react"
-
+import React, { useState } from "react"
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -9,7 +8,6 @@ import { Textarea } from '@/components/ui/textarea'
 import { Card } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
-import { useState } from 'react'
 
 const contactInfo = [
   {
@@ -20,7 +18,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    details: ['info@vertexsteelandengineeringservices.com'],
+    details: ['info@vertexsteelandengineeringservices.com','sales@vertexxsteelandengineeringservices.com'],
   },
   {
     icon: MapPin,
@@ -38,13 +36,43 @@ export function ContactForm() {
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('[v0] Form submitted:', formData)
-    // Handle form submission
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+
+    const data = await res.json()
+
+    if (!res.ok) {
+      alert(data.error || "Something went wrong")
+      return
+    }
+
+    alert("Message sent successfully ✅")
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      message: "",
+    })
+  } catch (error) {
+    console.error(error)
+    alert("Failed to send message")
+  }
+}
+
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
@@ -61,22 +89,22 @@ export function ContactForm() {
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
             Get In Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Let's Discuss Your Project
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Ready to start your steel detailing project? Contact us today for a consultation and discover how we can bring precision to your construction needs.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Ready to start your steel detailing project? Contact us today for a consultation.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
           {/* Contact Info Cards */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="grid gap-6"
           >
             {contactInfo.map((item, index) => {
               const Icon = item.icon
@@ -88,15 +116,24 @@ export function ContactForm() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+                  <Card
+                    className={`p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/50 ${
+                      item.title === 'Email' ? 'mb-6' : ''
+                    }`}
+                  >
                     <div className="flex items-start gap-4">
                       <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-foreground">{item.title}</h3>
+                        <h3 className="text-lg font-bold mb-2">
+                          {item.title}
+                        </h3>
                         {item.details.map((detail) => (
-                          <p key={detail} className="text-sm text-muted-foreground mb-1">
+                          <p
+                            key={detail}
+                            className="text-sm text-muted-foreground break-words"
+                          >
                             {detail}
                           </p>
                         ))}
@@ -110,12 +147,14 @@ export function ContactForm() {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-2"
-          >
+  initial={{ opacity: 0, x: 30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+className="lg:col-span-2 lg:self-start ml-20"
+
+>
+
             <Card className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -126,11 +165,9 @@ export function ContactForm() {
                     <Input
                       id="name"
                       name="name"
-                      placeholder="John Doe"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -141,11 +178,9 @@ export function ContactForm() {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="john@example.com"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full"
                     />
                   </div>
                 </div>
@@ -158,12 +193,9 @@ export function ContactForm() {
                     <Input
                       id="phone"
                       name="phone"
-                      type="tel"
-                      placeholder="+1 (555) 000-0000"
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -171,10 +203,8 @@ export function ContactForm() {
                     <Input
                       id="company"
                       name="company"
-                      placeholder="Your Company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full"
                     />
                   </div>
                 </div>
@@ -186,15 +216,14 @@ export function ContactForm() {
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Tell us about your steel detailing needs..."
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="min-h-[150px] resize-none"
+                    className="min-h-[150px]"
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full font-semibold group">
+                <Button type="submit" size="lg" className="w-full group">
                   Send Message
                   <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
